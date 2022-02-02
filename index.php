@@ -17,17 +17,19 @@
 <body>
     <div class="container">
 
-        <h2>Translator App - by Jay dev</h2>
-
         <form action="index.php" method="get">
-            <div class="form-group"> <br>
+            
+            <br><h2 class="text-center">Translator App</h2>
+            <p class="text-center"><i>by Dev Jay</i></p>
+            
+            <div class="form-group">
                 <p><label for="text_from">Translate from language: </label> <input class="form-control" type="text" name="lang_from" placeholder="ex: en (lowercase, without spaces)"></p>
-                <textarea class="form-control" name="text_from" id="" cols="30" rows="5"></textarea>
+                <textarea class="form-control" name="text_from" id="" cols="30" rows="4"></textarea>
             </div>
 
             <div class="form-group"> <br>
                 <p><label for="text_to">to language: </label> <input class="form-control" type="text" name="lang_to" placeholder="ex: pt (lowercase, without spaces)"></p>
-                <textarea class="form-control" name="text_to" id="" cols="30" rows="5"><?php $listener->echo_text(); ?></textarea>
+                <textarea class="form-control" name="text_to" id="" cols="30" rows="4"><?php $listener->echo_text(); ?></textarea>
             </div>
 
             <div class="form-group"> <br>
@@ -37,7 +39,7 @@
     </div>
     
     <div class="container"> <br><hr>
-        <p>Powered by <a href=""> https://www.yandex.com/ru/translate </a></p>
+        <p>Powered by <a href="https://translate.yandex.com/">Yandex Translate</a></p>
     </div>
 
     <!-- JavaScript Bundle with Popper -->

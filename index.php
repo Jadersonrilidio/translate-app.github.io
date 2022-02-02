@@ -11,11 +11,14 @@
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-    <title>Mock Translator App</title>
+    <title>Translator App by Jay Dev</title>
 </head>
 
 <body>
     <div class="container">
+
+        <h2>Translator App - by Jay dev</h2>
+
         <form action="index.php" method="get">
             <div class="form-group"> <br>
                 <p><label for="text_from">Translate from language: </label> <input class="form-control" type="text" name="lang_from" placeholder="ex: en (lowercase, without spaces)"></p>
@@ -24,7 +27,7 @@
 
             <div class="form-group"> <br>
                 <p><label for="text_to">to language: </label> <input class="form-control" type="text" name="lang_to" placeholder="ex: pt (lowercase, without spaces)"></p>
-                <textarea class="form-control" name="text_to" id="" cols="30" rows="5"><?php echo $listener->echo_translation(); ?></textarea>
+                <textarea class="form-control" name="text_to" id="" cols="30" rows="5"><?php $listener->echo_text(); ?></textarea>
             </div>
 
             <div class="form-group"> <br>

@@ -8,14 +8,8 @@ class TranslationYandex {
     
     private $key = 'trnsl.1.1.20220202T171040Z.c73730c1db5f436c.49416f63010117766dd7c4985599617a2f9c3a44';
 
-    /**
-     * 
-     */
     public function __construct () {}
 
-    /**
-     * 
-     */
     private function init() {
         if ( empty($this->key) ) {
             throw new InvalidArgumentException("Field <b> key </b> is required.");
@@ -33,10 +27,12 @@ class TranslationYandex {
             'key' => $this->key,
             'text' => $_GET['text_from'],
             'lang' => $_GET['lang_from'].'-'.$_GET['lang_to'], 
-            'format' => ($format=='text') ? 'plain' : $format, 
+            'format' => ($format=='text') ? 'plain' : $format
         );
 
         $formData = http_build_query($values);
+
+        // echo $formData."<br>";
        
         $curlHandle = curl_init(self::TRANSLATE_YA_URL);
         curl_setopt($curlHandle, CURLOPT_RETURNTRANSFER, true);
@@ -44,18 +40,19 @@ class TranslationYandex {
        
         $json = curl_exec($curlHandle);
         curl_close($curlHandle);
+
+        // print_r($json); echo "<br>";
        
         $data = json_decode($json, true);
+
+        // echo $data['code'];
        
         return ($data['code']==200) ? $data['text'] : $data;
     }
 
-    /**
-     * 
-     */
     public function echo_translation() {
         if (isset($_GET['submit'])) {
-            return $this->translate_text();
+            return $this->translate_text()[0];
         }
     }
 }

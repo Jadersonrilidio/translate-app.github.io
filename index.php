@@ -24,7 +24,7 @@
 
             <div class="form-group"> <br>
                 <p><label for="text_to">to language: </label> <input class="form-control" type="text" name="lang_to" placeholder="ex: pt (lowercase, without spaces)"></p>
-                <textarea class="form-control" name="text_to" id="" cols="30" rows="5"><?php $listener->echo_translation(); ?></textarea>
+                <textarea class="form-control" name="text_to" id="" cols="30" rows="5"><?php echo $listener->echo_translation(); ?></textarea>
             </div>
 
             <div class="form-group"> <br>

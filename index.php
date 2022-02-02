@@ -1,4 +1,7 @@
-<?php include './TranslationYandex.php'; ?>
+<?php 
+    include './TranslationYandex.php'; 
+    $translation = new TranslationYandex();
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -29,7 +32,7 @@
 
             <div class="form-group"> <br>
                 <p><label for="text_to">to language: </label> <input class="form-control" type="text" name="lang_to" placeholder="ex: pt (lowercase, without spaces)"></p>
-                <textarea class="form-control" name="text_to" id="" cols="30" rows="4"><?php $listener->echo_text(); ?></textarea>
+                <textarea class="form-control" name="text_to" id="" cols="30" rows="4"><?php $translation->echo_text(); ?></textarea>
             </div>
 
             <div class="form-group"> <br>
